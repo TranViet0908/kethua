@@ -49,14 +49,14 @@ public class Main {
         }
 
         System.out.println("May ko phai Intel: ");
-        Iterator<MayTinh> iterator = mt.iterator();
-        while (iterator.hasNext()) {
-            MayTinh mayTinh = iterator.next();
-            if (!mayTinh.getTenNSX().toUpperCase().equals("INTEL")) {
-                iterator.remove();
-                mayTinh.output();
-                System.out.println("");
+        for (MayTinh x : mt) {
+            if(x.getTenNSX().toUpperCase().equals("INTEL")){
+                mt.remove(x);
             }
+        } 
+        for (MayTinh x : mt) {
+            x.output();
+            System.out.println("");
         }
         sc.close();
     }
