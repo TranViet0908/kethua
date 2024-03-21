@@ -5,15 +5,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    // public static void sapXepTangGia(ArrayList<MayTinh> mt) {
-    //     Collections.sort(mt, new Comparator<MayTinh>() {
-    //         @Override
-    //         public int compare(MayTinh mT1, MayTinh mT2) {
-    //             return Float.compare(mT1.getGiaThanh(), mT2.getGiaThanh());
-    //         }
-    //     });
-    // }
-
     public static void sapXepTangGia(ArrayList<MayTinh> mt) {
         for(int i = 0; i < mt.size() - 1; i++) {
             for(int j = i + 1; j < mt.size(); j++){
@@ -49,6 +40,7 @@ public class Main {
             System.out.println("");
         }
 
+        System.out.println("May cua IBM: ");
         for (MayTinh x : mt) {
             if(x.getTenNSX().toUpperCase().equals("IBM")){
                 x.output();
@@ -56,10 +48,13 @@ public class Main {
             }
         }
 
-        for (MayTinh x : mt) {
-            if(!x.getTenNSX().toUpperCase().equals("INTEL")){
-                mt.remove(x);
-                x.output();
+        System.out.println("May ko phai Intel: ");
+        Iterator<MayTinh> iterator = mt.iterator();
+        while (iterator.hasNext()) {
+            MayTinh mayTinh = iterator.next();
+            if (!mayTinh.getTenNSX().toUpperCase().equals("INTEL")) {
+                iterator.remove();
+                mayTinh.output();
                 System.out.println("");
             }
         }
