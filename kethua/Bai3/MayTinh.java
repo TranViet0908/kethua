@@ -10,12 +10,6 @@ public class MayTinh extends May {
         this.HDD = hDD;
     }
 
-    public MayTinh(int tocDo, int rAM, int hDD) {
-        this.tocDo = tocDo;
-        this.RAM = rAM;
-        this.HDD = hDD;
-    }
-
     public MayTinh(){
         
     }
